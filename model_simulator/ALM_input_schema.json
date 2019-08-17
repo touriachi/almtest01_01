@@ -1,0 +1,875 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "Version Control": {
+      "type": "object",
+      "properties": {
+        "CONV": {
+          "type": "number"
+        },
+        "CALV": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "CALV",
+        "CONV"
+      ]
+    },
+    "Request": {
+      "type": "object",
+      "properties": {
+        "ET": {
+          "type": "string"
+        },
+        "SR": {
+          "type": "boolean"
+        },
+        "FMT": {
+          "type": "boolean"
+        },
+        "RID": {
+          "type": "integer"
+        },
+        "UID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ET",
+        "FMT",
+        "RID",
+        "SR",
+        "UID"
+      ]
+    },
+    "Inputs": {
+      "type": "object",
+      "properties": {
+        "Asset Model": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "AID": {
+                  "type": "integer"
+                },
+                "DES": {
+                  "type": "string"
+                },
+                "SIM": {
+                  "type": "integer"
+                },
+                "MY": {
+                  "type": "integer"
+                },
+                "MS": {
+                  "type": "string"
+                },
+                "YR": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "AID",
+                "DES",
+                "MS",
+                "MY",
+                "SIM",
+                "YR"
+              ]
+            },
+            "Assets": {
+              "type": "object",
+              "properties": {
+                "Items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "MN": {
+                        "type": "string"
+                      },
+                      "MT": {
+                        "type": "string"
+                      },
+                      "AT": {
+                        "type": "string"
+                      },
+                      "AM": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "SD": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "SV": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "AL": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "AC": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "TTM": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "MIN": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "SKN": {
+                        "type": "null"
+                      },
+                      "KURT": {
+                        "type": "null"
+                      },
+                      "SP": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      },
+                      "SPSD": {
+                        "type": [
+                          "null",
+                          "number"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "AC",
+                      "AL",
+                      "AM",
+                      "AT",
+                      "KURT",
+                      "MIN",
+                      "MN",
+                      "MT",
+                      "SD",
+                      "SKN",
+                      "SP",
+                      "SPSD",
+                      "SV",
+                      "TTM"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "Items"
+              ]
+            },
+            "AssetChild": {
+              "type": "object",
+              "properties": {
+                "Items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "MNP": {
+                        "type": "string"
+                      },
+                      "MNC": {
+                        "type": "string"
+                      },
+                      "COEF": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "COEF",
+                      "MNC",
+                      "MNP"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "Items"
+              ]
+            },
+            "Correlation Matrix": {
+              "type": "object",
+              "properties": {
+                "columns name": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "columns name",
+                "rows"
+              ]
+            },
+            "Adjustment Factor": {
+              "type": "object",
+              "properties": {
+                "Items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "MN": {
+                        "type": "string"
+                      },
+                      "FY": {
+                        "type": "integer"
+                      },
+                      "COEF": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "COEF",
+                      "FY",
+                      "MN"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "Items"
+              ]
+            }
+          },
+          "required": [
+            "Adjustment Factor",
+            "AssetChild",
+            "Assets",
+            "Correlation Matrix",
+            "General config"
+          ]
+        },
+        "Liability Model": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "LID": {
+                  "type": "integer"
+                },
+                "DES": {
+                  "type": "string"
+                },
+                "PY": {
+                  "type": "integer"
+                },
+                "MY": {
+                  "type": "integer"
+                },
+                "FT": {
+                  "type": "integer"
+                },
+                "SAA": {
+                  "type": "string"
+                },
+                "MSP": {
+                  "type": "integer"
+                },
+                "CB": {
+                  "type": "string"
+                },
+                "FRB": {
+                  "type": "string"
+                },
+                "AP": {
+                  "type": "integer"
+                },
+                "AF": {
+                  "type": "integer"
+                },
+                "SP": {
+                  "type": "integer"
+                },
+                "FR0": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "AF",
+                "AP",
+                "CB",
+                "DES",
+                "FR0",
+                "FRB",
+                "FT",
+                "LID",
+                "MSP",
+                "MY",
+                "PY",
+                "SAA",
+                "SP"
+              ]
+            },
+            "Plans": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "General config": {
+                        "type": "object",
+                        "properties": {
+                          "PD": {
+                            "type": "string"
+                          },
+                          "LVY": {
+                            "type": "integer"
+                          },
+                          "Plan Description": {
+                            "type": "string"
+                          },
+                          "Last Valuation Year": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "columns name": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "rows": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "number"
+                                    }
+                                  }
+                                }
+                              },
+                              "required": [
+                                "columns name",
+                                "rows"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "data",
+                            "name"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "General config",
+                      "items"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "items"
+              ]
+            },
+            "Stochastic AA details": {
+              "type": "object",
+              "properties": {
+                "General config": {
+                  "type": "object",
+                  "properties": {
+                    "MSO": {
+                      "type": "number"
+                    },
+                    "PPR": {
+                      "type": "number"
+                    },
+                    "TR": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "MSO",
+                    "PPR",
+                    "TR"
+                  ]
+                },
+                "Private Market Parameter": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "MN": {
+                            "type": "string"
+                          },
+                          "Rollover percentage": {
+                            "type": "number"
+                          },
+                          "Income Yield": {
+                            "type": "number"
+                          },
+                          "Leverage": {
+                            "type": "number"
+                          },
+                          "Re-Leverage": {
+                            "type": "number"
+                          },
+                          "Exp. Return": {
+                            "type": "number"
+                          },
+                          "Cap Increase": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "Cap Increase",
+                          "Exp. Return",
+                          "Income Yield",
+                          "Leverage",
+                          "MN",
+                          "Re-Leverage",
+                          "Rollover percentage"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "items"
+                  ]
+                },
+                "OverUnder": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "MN": {
+                            "type": "string"
+                          },
+                          "KEY": {
+                            "type": "string"
+                          },
+                          "VAL": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "KEY",
+                          "MN",
+                          "VAL"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "items"
+                  ]
+                }
+              },
+              "required": [
+                "General config",
+                "OverUnder",
+                "Private Market Parameter"
+              ]
+            },
+            "Historical Performance": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "KEY": {
+                        "type": "string"
+                      },
+                      "FY": {
+                        "type": "string"
+                      },
+                      "VAL": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "FY",
+                      "KEY",
+                      "VAL"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "items"
+              ]
+            }
+          },
+          "required": [
+            "General config",
+            "Historical Performance",
+            "Plans",
+            "Stochastic AA details"
+          ]
+        },
+        "Raw Data": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "MID": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "MID"
+              ]
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "mn": {
+                    "type": "string"
+                  },
+                  "rows": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "mn",
+                  "rows"
+                ]
+              }
+            }
+          },
+          "required": [
+            "General config",
+            "Items"
+          ]
+        },
+        "Portfolios": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "PID": {
+                  "type": "integer"
+                },
+                "DES": {
+                  "type": "string"
+                },
+                "MY": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "DES",
+                "MY",
+                "PID"
+              ]
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "MN": {
+                    "type": "string"
+                  },
+                  "WT": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "MN",
+                  "WT"
+                ]
+              }
+            }
+          },
+          "required": [
+            "General config",
+            "Items"
+          ]
+        },
+        "Sensitivity & Scenarios": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "TT": {
+                  "type": "string"
+                },
+                "TID": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "TID",
+                "TT"
+              ]
+            },
+            "Data": {
+              "type": "object",
+              "properties": {
+                "columns name": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                }
+              },
+              "required": [
+                "columns name",
+                "rows"
+              ]
+            }
+          },
+          "required": [
+            "Data",
+            "General config"
+          ]
+        },
+        "Stats": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "MID": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "MID"
+              ]
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "MN": {
+                    "type": "string"
+                  },
+                  "ST": {
+                    "type": "string"
+                  },
+                  "YR": {
+                    "type": "string"
+                  },
+                  "VAL ": {
+                    "type": [
+                      "null",
+                      "number"
+                    ]
+                  }
+                },
+                "required": [
+                  "MN",
+                  "ST",
+                  "VAL ",
+                  "YR"
+                ]
+              }
+            }
+          },
+          "required": [
+            "General config",
+            "Items"
+          ]
+        },
+        "LTCMA": {
+          "type": "object",
+          "properties": {
+            "General config": {
+              "type": "object",
+              "properties": {
+                "LTCMAID": {
+                  "type": "integer"
+                },
+                "DES": {
+                  "type": "string"
+                },
+                "DR": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DES",
+                "DR",
+                "LTCMAID",
+                "Status"
+              ]
+            },
+            "Bond Return YC": {
+              "type": "object",
+              "properties": {
+                "columns name": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "integer",
+                      "string"
+                    ]
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                }
+              },
+              "required": [
+                "columns name",
+                "rows"
+              ]
+            },
+            "Moments": {
+              "type": "object",
+              "properties": {
+                "columns name": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                }
+              },
+              "required": [
+                "columns name",
+                "rows"
+              ]
+            },
+            "Correlation Matrix": {
+              "type": "object",
+              "properties": {
+                "columns name": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "columns name",
+                "rows"
+              ]
+            }
+          },
+          "required": [
+            "Bond Return YC",
+            "Correlation Matrix",
+            "General config",
+            "Moments"
+          ]
+        }
+      },
+      "required": [
+
+      ]
+    }
+  },
+  "required": [
+    "Inputs",
+    "Request",
+    "Version Control"
+  ]
+}
