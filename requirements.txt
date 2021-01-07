@@ -130,7 +130,7 @@ jsondiff==1.2.0
 jsonschema==3.0.2
 knack==0.6.3
 lazy-object-proxy==1.4.1
-lxml==4.4.1
+lxml==4.6.2
 MarkupSafe==1.1.1
 mccabe==0.6.1
 mock==2.0.0
